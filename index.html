@@ -221,7 +221,7 @@
         <!-- Interpolating. -->
         <h3 class="title is-4">Interpolating states</h3>
         <div class="content has-text-justified">
-          h1>Overview of Floating Object Grasping System</h1>
+          <h1>Overview of Floating Object Grasping System</h1>
           <p>This paper introduces a two-step grasping system using reinforcement learning for grasping a floating object.
           The system aims to efficiently guide the robotic arm towards the target object and execute a precise grasp when the arm reaches a predefined distance threshold ε from the object.</p>
 
@@ -234,6 +234,16 @@
           Our RL model is a modification from DDPG complemented with HER.
           The RL model generates the appropriate action in response to the presented observation.
           The action determines the gripper's position in the next step with the MoveIt software over successive iterations of the training process, the model progressively assimilates an optimal policy that aims to minimize its distance from the target object.</p>
+
+          <div class="columns is-centered">
+            <div class="column is-full-width">
+              <div class="slider-container">
+                <div class="slider-image-container">
+                  <img id="slider-image" src="./static/images/rl-grasp-diagram.png">
+                </div>
+              </div>
+            </div>
+          </div>
 
           <h2>Step 2: Grasping the Target Object</h2>
           <p>Once the arm reaches the predefined distance threshold ε, so that:</p>
@@ -248,15 +258,6 @@
           </p>
           <p>where d is the distance between the gripper and the target object, it initiates grasping. The gripper moves to the object's location and then closes to secure the object.</p>
         </div>
-        <div class="columns is-centered">
-          <div class="column is-full-width">
-            <div class="slider-container">
-              <div class="slider-image-container">
-                <img id="slider-image" src="./static/images/rl-grasp-diagram.png">
-              </div>
-            </div>
-          </div>
-        <br/>
 
     <!-- Concurrent Work. -->
     <!-- <div class="columns is-centered">
