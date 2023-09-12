@@ -216,39 +216,46 @@
      <!-- Animation. -->
      <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Animation</h2>
+        <h2 class="title is-3">Our Approach</h2>
 
         <!-- Interpolating. -->
         <h3 class="title is-4">Interpolating states</h3>
         <div class="content has-text-justified">
+          h1>Overview of Floating Object Grasping System</h1>
+          <p>This paper introduces a two-step grasping system using reinforcement learning for grasping a floating object.
+          The system aims to efficiently guide the robotic arm towards the target object and execute a precise grasp when the arm reaches a predefined distance threshold ε from the object.</p>
+
+          <h2>Step 1: Iterative Movement Towards the Target Object</h2>
+          <p>In the first phase, the robotic arm iteratively approaches the target object, determining the optimal direction for proximity.
+          Our RL algorithm adapts to the dynamic and unpredictable object behavior, guiding the arm's movement.
+          The agent's goal is to minimize its distance from the target object.</p>
+          
+          <p>At each iteration of the training procedure, the Unity simulator accumulates observations, subsequently passed to the RL model.
+          Our RL model is a modification from DDPG complemented with HER.
+          The RL model generates the appropriate action in response to the presented observation.
+          The action determines the gripper's position in the next step with the MoveIt software over successive iterations of the training process, the model progressively assimilates an optimal policy that aims to minimize its distance from the target object.</p>
+
+          <h2>Step 2: Grasping the Target Object</h2>
+          <p>Once the arm reaches the predefined distance threshold ε, so that:</p>
           <p>
-            We can also animate the scene by interpolating the deformation latent codes of two input
-            frames. Use the slider here to linearly interpolate between the left frame and the right
-            frame.
+              <math>
+                  <mrow>
+                      <mi>d</mi>
+                      <mo>&lt;</mo>
+                      <mi>ε</mi>
+                  </mrow>
+              </math>
           </p>
+          <p>where d is the distance between the gripper and the target object, it initiates grasping. The gripper moves to the object's location and then closes to secure the object.</p>
         </div>
-        <div class="columns is-vcentered interpolation-panel">
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_start.jpg"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."/>
-            <p>Start Frame</p>
-          </div>
-          <div class="column interpolation-video-column">
-            <div id="interpolation-image-wrapper">
-              Loading...
+        <div class="columns is-centered">
+          <div class="column is-full-width">
+            <div class="slider-container">
+              <div class="slider-image-container">
+                <img id="slider-image" src="./static/images/rl-grasp-diagram.png">
+              </div>
             </div>
-            <input class="slider is-fullwidth is-large is-info"
-                   id="interpolation-slider"
-                   step="1" min="0" max="100" value="0" type="range">
           </div>
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_end.jpg"
-                 class="interpolation-image"
-                 alt="Interpolation end reference image."/>
-            <p class="is-bold">End Frame</p>
-          </div>
-        </div>
         <br/>
 
     <!-- Concurrent Work. -->
