@@ -217,11 +217,11 @@
      <div class="columns is-centered">
       <div class="column is-full-width">
         <div class="content has-text-justified">
-          <h1>Overview of Floating Object Grasping System</h1>
+          <h1 class="is-centered">Overview of Floating Object Grasping System</h1>
           <p>This paper introduces a two-step grasping system using reinforcement learning for grasping a floating object.
           The system aims to efficiently guide the robotic arm towards the target object and execute a precise grasp when the arm reaches a predefined distance threshold ε from the object.</p>
 
-          <h2>Step 1: Iterative Movement Towards the Target Object</h2>
+          <h2 class="is-centered">Step 1: Iterative Movement Towards the Target Object</h2>
           <p>In the first phase, the robotic arm iteratively approaches the target object, determining the optimal direction for proximity.
           Our RL algorithm adapts to the dynamic and unpredictable object behavior, guiding the arm's movement.
           The agent's goal is to minimize its distance from the target object.</p>
@@ -234,14 +234,14 @@
           <div class="columns is-centered">
             <div class="column is-full-width">
               <div class="slider-container">
-                <div class="slider-image-container">
+                <div class="slider-image-container is-centered">
                   <img id="slider-image" src="./static/images/rl-grasp-diagram.png">
                 </div>
               </div>
             </div>
           </div>
 
-          <h2>Step 2: Grasping the Target Object</h2>
+          <h2 class="is-centered">Step 2: Grasping the Target Object</h2>
           <p>Once the arm reaches the predefined distance threshold ε, so that:</p>
           <p>
               <math>
