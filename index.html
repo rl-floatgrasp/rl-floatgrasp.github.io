@@ -62,8 +62,8 @@
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
-              <!-- <span class="link-block">
-                <a href="https://arxiv.org/pdf/2011.12948"
+              <span class="link-block">
+                <a href="https://drive.google.com/file/d/1VkUM3WE5vLrIeTlOrFjMRFoz2Se9eK3s/view?usp=sharing"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -71,7 +71,7 @@
                   <span>Paper</span>
                 </a>
               </span>
-              <span class="link-block">
+              <!-- <span class="link-block">
                 <a href="https://arxiv.org/abs/2011.12948"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -126,8 +126,9 @@
                 type="video/mp4">
       </video>
       <h2 class="subtitle has-text-centered">
-        Our reinforcement learning based floating object grasping method effectively adapts to the unpredictable object movements with different velocities and directions in a 3D space. <br>
-        Below are some examples of our method in action with different object velocities (from left to right: 0.004 to 0.008 Unity units per second).
+        Our reinforcement learning based floating object grasping method effectively adapts to the unpredictable object movements with different velocities and directions in a 3D space. <br><br>
+        Below are some examples of our method in action with different object maximum random velocities<br>
+        From left to right: 0.004, 0.005, 0.006, 0.007, 0.008 Unity units per second.
       </h2>
     </div>
   </div>
@@ -188,7 +189,7 @@
             Traditional grasping methods cannot perform well in locating unpredictable positions of a floating object in an underwater environment. 
             To address the challenge of dynamic and unpredictable object behaviors, our proposed technique leverages an improved Deep Deterministic Policy Gradients (DDPG) deep reinforcement learning (DRL) algorithm to enable the robotic arm to learn effective grasping strategies through iterative interactions, all without the need for velocity control. 
             Our framework decouples object detection from DRL to facilitate the transfer of a simulation environment to a real robot.  
-            Our experimental results with the Unity simulator incorporating real-time motion control using the MoveIt Motion Planning Framework demonstrate the efficacy of our approach over others, such as the point-to-point approach, without using reinforcement learning.
+            Our experimental results with the Unity simulator incorporating real-time motion control using the MoveIt Motion Planning Framework demonstrate the efficacy of our approach over others, without using reinforcement learning.
           </p>
         </div>
       </div>
@@ -211,6 +212,44 @@
 
 <section class="section">
   <div class="container is-max-desktop">
+
+     <!-- Animation. -->
+     <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Animation</h2>
+
+        <!-- Interpolating. -->
+        <h3 class="title is-4">Interpolating states</h3>
+        <div class="content has-text-justified">
+          <p>
+            We can also animate the scene by interpolating the deformation latent codes of two input
+            frames. Use the slider here to linearly interpolate between the left frame and the right
+            frame.
+          </p>
+        </div>
+        <div class="columns is-vcentered interpolation-panel">
+          <div class="column is-3 has-text-centered">
+            <img src="./static/images/interpolate_start.jpg"
+                 class="interpolation-image"
+                 alt="Interpolate start reference image."/>
+            <p>Start Frame</p>
+          </div>
+          <div class="column interpolation-video-column">
+            <div id="interpolation-image-wrapper">
+              Loading...
+            </div>
+            <input class="slider is-fullwidth is-large is-info"
+                   id="interpolation-slider"
+                   step="1" min="0" max="100" value="0" type="range">
+          </div>
+          <div class="column is-3 has-text-centered">
+            <img src="./static/images/interpolate_end.jpg"
+                 class="interpolation-image"
+                 alt="Interpolation end reference image."/>
+            <p class="is-bold">End Frame</p>
+          </div>
+        </div>
+        <br/>
 
     <!-- Concurrent Work. -->
     <!-- <div class="columns is-centered">
