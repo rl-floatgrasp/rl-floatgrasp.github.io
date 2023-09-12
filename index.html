@@ -216,7 +216,7 @@
      <!-- Animation. -->
      <div class="columns is-centered">
       <div class="column is-full-width">
-        <div class="content has-text-justified">
+        <div class="content is-centered has-text-centered">
           <h1 class="title is-3">Overview of Floating Object Grasping System</h1>
           <p>This paper introduces a two-step grasping system using reinforcement learning for grasping a floating object.
           The system aims to efficiently guide the robotic arm towards the target object and execute a precise grasp when the arm reaches a predefined distance threshold ε from the object.</p>
@@ -231,15 +231,7 @@
           The RL model generates the appropriate action in response to the presented observation.
           The action determines the gripper's position in the next step with the MoveIt software over successive iterations of the training process, the model progressively assimilates an optimal policy that aims to minimize its distance from the target object.</p>
 
-          <div class="columns is-centered">
-            <div class="column is-full-width">
-              <div class="slider-container">
-                <div class="slider-image-container is-centered">
-                  <img id="slider-image" src="./static/images/rl-grasp-diagram.png">
-                </div>
-              </div>
-            </div>
-          </div>
+          <img id="slider-image" src="./static/images/rl-grasp-diagram.png">
 
           <h2 class="title is-3">Step 2: Grasping the Target Object</h2>
           <p>Once the arm reaches the predefined distance threshold ε, so that:</p>
